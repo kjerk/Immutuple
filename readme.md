@@ -46,7 +46,7 @@ System.out.println(pairMap.get("Second")); // Jones
 ## Goals
 * Immutability: Friendly for working in threaded or stream environments by default.
 * No dependencies. (except in addon modules where required IE: Jackson)
-* Terse: Immutability means tuple fields can be public. Getters exist but are therefor optional.
+* Terse: Immutability means tuple fields can be public. Getters exist but are therefore optional.
 * Java 8+ streams and lambdas as first class citizens.
 * Predictable names: Centralized static utils.
 
