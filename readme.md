@@ -51,7 +51,7 @@ System.out.println(pairMap.get("Second")); // Jones
 * Predictable names: Centralized static utils.
 
 ### Why Another Tuples Library?
-There are several other small (and not so small) tuple libraries for the JVM, but they're solving the problem in a less than optimum way (to our tastes). So the attmpt here is to avoid the following
+There are several other small (and not so small) tuple libraries for the JVM, but they're solving the problem in a less than optimum way (to our tastes). So the attempt here is to avoid the following
 
 * [Having](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream-tuple/1.0.0.M4) [Any](http://mvnrepository.com/artifact/com.aol.cyclops/cyclops-tuples/7.2.4) [Dependencies](http://mvnrepository.com/artifact/org.springframework/spring-tuple/1.0.0.RELEASE)
 * [Obtuse](http://www.javatuples.org/) or [unpredictable names](https://github.com/mediascience/java-tuple/blob/master/src/main/java/com/msiops/footing/tuple/Triplet.java#L23-L29)
