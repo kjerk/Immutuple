@@ -1,0 +1,8 @@
+apply from: "${buildFiles}/settings-java.gradle"
+
+dependencies {
+	
+	
+	
+}
+

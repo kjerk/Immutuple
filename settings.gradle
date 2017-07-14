@@ -1,0 +1,11 @@
+///////////////////////////////////
+// Root Project Name and Settings
+rootProject.name = 'Immutuple'
+
+///////////////////////////////////
+// Included Modules / Subprojects
+include 'modules:core-tuples'
+
+include 'modules:json-gson'
+include 'modules:json-jackson'
+
