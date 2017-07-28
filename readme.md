@@ -8,7 +8,7 @@
       - [Grouping / Streaming](#grouping--streaming)
       - [Conversion](#conversion)
   - [Goals](#goals)
-    - [Why Another Tuples Library?™️](#why-another-tuples-library)
+    - [Why Another Tuples Library?](#why-another-tuples-library)
     - [Todo](#todo)
   - [License](#license)
 
@@ -66,7 +66,7 @@ System.out.println(pairMap.get("Second")); // Jones
 * Java 8+ streams and lambdas as first class citizens.
 * Predictable names: Centralized static utils.
 
-### Why Another Tuples Library?™️
+### Why Another Tuples Library?
 There are several other small (and not so small) tuple libraries for the JVM, but they're solving the problem in a less than optimum way (to our tastes). So the attempt here is to avoid the following
 
 * [Having](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream-tuple/1.0.0.M4) [Any](http://mvnrepository.com/artifact/com.aol.cyclops/cyclops-tuples/7.2.4) [Dependencies](http://mvnrepository.com/artifact/org.springframework/spring-tuple/1.0.0.RELEASE)
