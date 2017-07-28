@@ -78,6 +78,7 @@ There are several other small (and not so small) tuple libraries for the JVM, bu
 * Not being [Java first](https://github.com/ztellman/clj-tuple).
 
 ### Todo
+* Finish Maven Central deploy pipeline. (in progress)
 * Add Java 9 module info files to ensure intended compatibility and restrictions.
 * Finish Jackson and Gson custom serializer/deserializers for named tuples.
 
