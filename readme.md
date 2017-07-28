@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Immutuple](#immutuple)
+  - [tl;dr Usage](#tldr-usage)
+      - [Simple Instantiation](#simple-instantiation)
+      - [Grouping / Streaming](#grouping--streaming)
+      - [Conversion](#conversion)
+  - [Goals](#goals)
+    - [Why Another Tuples Library?™️](#why-another-tuples-library)
+    - [Todo](#todo)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Immutuple
 
 A simple tuples/util library for immutable, type safe tuples, that tries to avoid some common pitfalls and annoyances of similar libraries.
