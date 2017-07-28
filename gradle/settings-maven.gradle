@@ -1,6 +1,6 @@
 ///////////////////////////
 // Maven Central Settings
-apply plugin: 'maven-publish'
+apply plugin: 'maven-publish' // https://docs.gradle.org/4.0/userguide/publishing_maven.html
 
 publishing {
 	publications {
