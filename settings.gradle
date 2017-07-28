@@ -4,8 +4,8 @@ rootProject.name = 'Immutuple'
 
 ///////////////////////////////////
 // Included Modules / Subprojects
-include 'modules:core-tuples'
+include 'modules:immutuple-tuples'
 
-include 'modules:json-gson'
-include 'modules:json-jackson'
+include 'modules:immutuple-gson'
+include 'modules:immutuple-jackson'
 

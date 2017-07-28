@@ -1,0 +1,10 @@
+apply from: "${buildFiles}/settings-java.gradle"
+
+dependencies {
+	
+	compile project(":modules:immutuple-tuples")
+	
+	compileOnly 'com.fasterxml.jackson.core:jackson-databind:2.8.9'
+	
+}
+

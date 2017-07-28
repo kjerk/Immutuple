@@ -1,0 +1,10 @@
+apply from: "${buildFiles}/settings-java.gradle"
+
+dependencies {
+	
+	compile project(":modules:immutuple-tuples")
+	
+	compileOnly 'com.google.code.gson:gson:2.8.1'
+	
+}
+

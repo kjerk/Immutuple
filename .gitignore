@@ -30,10 +30,13 @@ gradle-app.setting
 /build/
 /target/
 
-# First Level Subdirs Only
+# First Level Subdirs
 */build/
 */logs/
 */target/
+
+# Module Build dirs
+/modules/*/build/*
 
 ## Miscellaneous
 *-SNAPSHOT.*
