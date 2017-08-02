@@ -1,0 +1,34 @@
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def sonaUser  = project.hasProperty('sonaUser') ? project.getProperty('sonaUser') : ''
+def sonaPass  = project.hasProperty('sonaPass') ? project.getProperty('sonaPass') : ''
+def gpgSecret = project.hasProperty('gpgSecret') ? project.getProperty('gpgSecret') : ''
+
+def snapshotRepo  = "https://oss.sonatype.org/content/repositories/snapshots"
+def stagingRepo   = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+def publicRepo    = "https://oss.sonatype.org/content/groups/public"
+def publicStaging = "https://oss.sonatype.org/content/groups/staging"
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: "file://localhost/tmp/myRepo/")
+			pom.project {
+				licenses {
+					license {
+						name 'The Apache Software License, Version 2.0'
+						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+						distribution 'repo'
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// https://github.com/trustin/sphinx-gradle-plugin/blob/master/build.gradle
+// https://github.com/nebula-plugins/nebula-publishing-plugin
+// https://www.michael.beiter.org/2015/01/09/publish-maven-bits-to-maven-central-code-signing-with-gnupg/
+// https://zsoltfabok.com/blog/2017/05/release-to-maven-repo-with-gradle/

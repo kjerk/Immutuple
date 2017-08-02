@@ -1,4 +1,5 @@
 apply from: "${buildFiles}/settings-java.gradle"
+apply from: "${buildFiles}/settings-maven.gradle"
 
 dependencies {
 	
@@ -7,34 +8,5 @@ dependencies {
 }
 
 group = 'io.github.kjerk'
-version = '1.0'
+version = '0.1.0'
 
-apply plugin: 'maven-publish'
-
-task sourceJar(type: Jar) {
-	from sourceSets.main.allJava
-}
-
-publishing {
-	publications {
-		maven(MavenPublication) {
-			from components.java
-		}
-		mavenJava(MavenPublication) {
-			from components.java
-			artifact sourceJar {
-				classifier "sources"
-			}
-		}
-	}
-}
-
-/* // Todo: finish repo location and credential passthrough.
-publishing {
-	repositories {
-		maven {
-			url "$buildDir/repo"
-		}
-	}
-}
-*/

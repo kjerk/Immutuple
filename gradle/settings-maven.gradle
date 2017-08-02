@@ -1,11 +1,88 @@
 ///////////////////////////
 // Maven Central Settings
-apply plugin: 'maven-publish' // https://docs.gradle.org/4.0/userguide/publishing_maven.html
+
+// Refs:
+// http://central.sonatype.org/pages/gradle.html
+// http://central.sonatype.org/pages/ossrh-guide.html
+// https://blog.codefx.org/tools/snapshots-gradle-maven-publish-plugin/
+// https://docs.gradle.org/4.0/userguide/maven_plugin.html
+// https://docs.gradle.org/4.0/userguide/publishing_maven.html
+// https://zsoltfabok.com/blog/2017/05/release-to-maven-repo-with-gradle/
+
+// TODO: Apparently signing your generated pom isn't supported!
+// TODO: SO I HAVE TO REDO THIS WITH THE OLD MAVEN PLUGIN >:|
+
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+def sonaUser  = project.hasProperty('sonaUser') ? project.getProperty('sonaUser') : ''
+def sonaPass  = project.hasProperty('sonaPass') ? project.getProperty('sonaPass') : ''
+def gpgSecret = project.hasProperty('gpgSecret') ? project.getProperty('gpgSecret') : ''
+
+def snapshotRepo  = "https://oss.sonatype.org/content/repositories/snapshots"
+def stagingRepo   = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+def publicRepo    = "https://oss.sonatype.org/content/groups/public"
+def publicStaging = "https://oss.sonatype.org/content/groups/staging"
+
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
+task sourceJar(type: Jar) {
+	classifier 'sources'
+	from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+artifacts {
+	archives jar, javadocJar, sourceJar
+}
+
+signing {
+	required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
+	sign configurations.archives
+}
 
 publishing {
+	repositories {
+		maven {
+			url snapshotRepo
+			credentials {
+				username sonaUser
+				password sonaPass
+			}
+		}
+	}
 	publications {
 		mavenJava(MavenPublication) {
 			from components.java
+			artifact sourceJar
+			artifact javadocJar
+			customizePom pom
+		}
+	}
+}
+
+def customizePom(pom) {
+	pom.withXml {
+		asNode().with {
+			appendNode('description', 'Immutuple tuples library')
+			appendNode('inceptionYear', '2017')
+			appendNode('issueManagement').with {
+				appendNode('system', 'Github')
+				appendNode('url', 'https://github.com/kjerk/Immutuple/issues')
+			}
+			appendNode('licenses').with{ appendNode('license').with {
+					appendNode('name', 'WTFNMFPLv3')
+					appendNode('url', 'https://github.com/dittodhole/WTFNMFPLv3')
+					appendNode('distribution', 'repository')
+				}
+			}
+			appendNode('packaging', 'jar')
+			appendNode('scm').with { appendNode('url', 'https://github.com/kjerk/Immutuple.git') }
+			appendNode('url', 'http://www.github.com/kjerk/Immutuple')
 		}
 	}
 }
