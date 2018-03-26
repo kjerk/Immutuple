@@ -8,6 +8,7 @@
 // https://docs.gradle.org/4.0/userguide/maven_plugin.html
 // https://docs.gradle.org/4.0/userguide/publishing_maven.html
 // https://zsoltfabok.com/blog/2017/05/release-to-maven-repo-with-gradle/
+// http://www.debonair.io/post/maven-cd/
 
 // TODO: Apparently signing your generated pom isn't supported!
 // TODO: SO I HAVE TO REDO THIS WITH THE OLD MAVEN PLUGIN >:|
