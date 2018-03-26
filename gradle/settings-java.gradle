@@ -24,9 +24,14 @@ compileJava {
 
 dependencies {
 	// This dependency is manually set here for resilience. Nobody should opt into this manually in a module as it has compilation requirements.
-	compileOnly 'org.projectlombok:lombok:1.16.16' // https://projectlombok.org/features/index.html | http://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly 'org.projectlombok:lombok:1.16.20' // https://projectlombok.org/features/index.html | http://mvnrepository.com/artifact/org.projectlombok/lombok
 	
-	testCompile deps.junit5
-	testCompile deps.mockito
+	// http://junit.org/junit5/docs/current/user-guide/
+	// http://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.1.0
+	testCompile 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+	testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+	
+	// http://mvnrepository.com/artifact/org.mockito/mockito-core/2.15.0
+	testCompile 'org.mockito:mockito-core:2.15.0'
 	
 }

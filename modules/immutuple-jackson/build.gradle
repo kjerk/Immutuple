@@ -4,7 +4,6 @@ dependencies {
 	
 	compile project(":modules:immutuple-tuples")
 	
-	compileOnly 'com.fasterxml.jackson.core:jackson-databind:2.8.9'
+	compileOnly 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
 	
 }
-

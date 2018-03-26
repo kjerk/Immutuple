@@ -1,0 +1,16 @@
+{
+	"Item1": [1, 2, 3, 4, 5],
+	"Item2": [
+		{
+			"Item1": "TestValue1"
+		},
+		{
+			"Item1": "TestValue2"
+		}
+	],
+	"Item3": {
+		"Item1": ["Test", "Values"],
+		"Item2": ["Please", "Work"],
+		"Item3": [1, 2, 3, 4, 5]
+	}
+}
