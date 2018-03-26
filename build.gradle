@@ -8,6 +8,11 @@ ext {
 //ext.buildFiles = "${rootProject.projectDir.absolutePath}/gradle"
 //ext.libsFiles  = "${rootProject.projectDir.absolutePath}/libs"
 
+buildscript { // https://plugins.gradle.org/plugin/net.ltgt.apt | https://stackoverflow.com/questions/28674352/gradle-plugins-dsl-restriction-on-declaration-location
+	repositories { maven { url "https://plugins.gradle.org/m2/" } }
+	dependencies { classpath "net.ltgt.gradle:gradle-apt-plugin:0.15" }
+}
+
 ////////////////////////////
 // Included Global Scripts
 apply from: "${buildFiles}/settings-deps.gradle"
